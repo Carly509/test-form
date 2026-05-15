@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: #EFF3F8;
+  --color-foreground: #171717;
+  --font-sans: var(--font-exo);
+}
+
+body {
+  background: #EFF3F8;
+  color: #171717;
+  font-family: var(--font-exo), Arial, Helvetica, sans-serif;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+input[type="checkbox"] {
+  accent-color: #6B8CAE;
+}

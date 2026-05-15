@@ -1,0 +1,432 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background: #eff3f8;
+    color: #171717;
+    font-family: "Exo", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+.application-page {
+    min-height: 100vh;
+    background: #eff3f8;
+    padding: 32px 16px;
+}
+
+.application-shell {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.application-title {
+    margin: 29px 0 34px;
+    color: #b1bcca;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: #b1bcca;
+    text-underline-offset: 4px;
+    text-transform: uppercase;
+}
+
+.application-card {
+    height: 860px;
+    overflow: visible;
+    background: #fff;
+    padding: 24px;
+}
+
+.application-intro {
+    margin-bottom: 40px;
+}
+
+.application-intro h2 {
+    margin: 0 0 18px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.application-intro p {
+    margin: 0;
+    color: #686868;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+}
+
+.application-form {
+    margin: 0;
+}
+
+.application-fields {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.application-field {
+    min-width: 0;
+}
+
+.application-field input,
+.application-field select {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #686868;
+    border-radius: 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    padding: 0 16px;
+    transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.application-field input:focus,
+.application-field select:focus {
+    border-color: #4e99cd;
+}
+
+.application-field input.has-error {
+    border-color: #ef4444;
+}
+
+.application-field input::placeholder {
+    color: #686868;
+    opacity: 1;
+}
+
+.application-field select {
+    appearance: none;
+    background-image: var(--application-select-icon);
+    background-position: right 16px center;
+    background-repeat: no-repeat;
+}
+
+.application-date-field {
+    position: relative;
+}
+
+.application-date-field input {
+    position: relative;
+    z-index: 10;
+    background: transparent;
+    color: transparent;
+}
+
+.application-date-field input.has-value {
+    color: #000;
+}
+
+.application-date-field span {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    left: 16px;
+    color: #686868;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+.application-date-field.has-value span {
+    display: none;
+}
+
+.application-date-icon {
+    position: absolute;
+    z-index: 20;
+    top: 50%;
+    right: 16px;
+    pointer-events: none;
+    transform: translateY(-50%);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    opacity: 1;
+}
+
+.application-error {
+    display: none;
+    margin: 4px 0 0;
+    color: #ef4444;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.application-error.is-visible {
+    display: block;
+}
+
+.application-lower {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.application-actions {
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.application-divider {
+    display: none;
+}
+
+.application-terms {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 40px 0 30px;
+}
+
+.application-checkbox-wrap {
+    position: relative;
+    margin-top: 4px;
+}
+
+.application-checkbox-wrap input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.application-checkbox {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #686868;
+    cursor: pointer;
+}
+
+.application-checkbox img {
+    display: none;
+    width: auto;
+    height: auto;
+}
+
+.application-checkbox-wrap input:checked + .application-checkbox img {
+    display: block;
+}
+
+.application-terms-label {
+    color: #000;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.68;
+    letter-spacing: 0;
+}
+
+.application-terms-label a {
+    color: #000;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.68;
+    letter-spacing: 0;
+    text-decoration: underline;
+    text-decoration-color: #000;
+    text-underline-offset: 2px;
+}
+
+.application-terms-error {
+    margin-left: 28px;
+}
+
+.application-status {
+    display: none;
+    margin: 0 0 10px 28px;
+    color: #2f7d32;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.application-status.is-visible {
+    display: block;
+}
+
+.application-status.is-error {
+    color: #ef4444;
+}
+
+.application-submit-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.application-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 173px;
+    height: 52px;
+    background: #4e99cd;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.68;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.application-submit:hover {
+    background: #3d8abf;
+}
+
+.application-submit:focus {
+    outline: 2px solid #4e99cd;
+    outline-offset: 2px;
+}
+
+.application-submit svg {
+    margin-left: 4px;
+}
+
+.application-submit[disabled] {
+    cursor: wait;
+    opacity: 0.75;
+}
+
+.application-illustration {
+    display: flex;
+    justify-content: center;
+}
+
+.application-illustration img {
+    width: 215.84px;
+    height: 196.26px;
+}
+
+@media (min-width: 768px) {
+    .application-page {
+        padding: 0;
+    }
+
+    .application-shell {
+        width: 974px;
+    }
+
+    .application-title {
+        margin-top: 79px;
+        margin-bottom: 55px;
+    }
+
+    .application-card {
+        width: 974px;
+        height: 705px;
+        overflow: hidden;
+        padding: 40px;
+    }
+
+    .application-intro h2 {
+        font-size: 21px;
+    }
+
+    .application-intro p {
+        font-size: 19px;
+    }
+
+    .application-fields {
+        width: 713px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .application-field input,
+    .application-field select,
+    .application-date-field {
+        width: 335px;
+    }
+
+    .application-field input,
+    .application-field select,
+    .application-date-field span {
+        font-size: 15px;
+    }
+
+    .application-lower {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    .application-divider {
+        display: block;
+        width: 713px;
+        border-top: 1px solid #e5e7eb;
+        margin-top: 44px;
+    }
+
+    .application-submit-wrap {
+        justify-content: flex-start;
+    }
+
+    .application-terms-label,
+    .application-terms-label a {
+        font-size: 17px;
+    }
+
+    .application-illustration {
+        display: block;
+        width: 301px;
+        margin-top: 60px;
+        margin-left: -40px;
+    }
+
+    .application-illustration img {
+        width: 301px;
+        height: 280px;
+    }
+}
